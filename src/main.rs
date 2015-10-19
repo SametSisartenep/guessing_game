@@ -27,7 +27,10 @@ fn main() {
 
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
-            Err(_) => continue,
+            Err(_) => {
+                println!("\x1b[0;31mEnter a \x1b[1;31mnumber\x1b[0;31m please.\x1b[0m");
+                continue;
+            }
         };
 
         println!("You guessed: \x1b[1;37m{}\x1b[0m", guess);
